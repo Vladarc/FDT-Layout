@@ -1,0 +1,91 @@
+@import "../mixins";
+.search {
+  @media screen and (min-width: 900px){
+    display: none;
+  }
+  &__open-form {
+    &:before {
+      content: "\e8b6";
+      font-size: 2.3rem;
+      color: $secondary-color;
+    }
+  }
+
+  &__form {
+    display: none;
+    &_input {
+      @include posA;
+      width: 100%;
+    }
+    &_wrapper {
+      position: relative;
+    }
+
+    &_close {
+      &::before {
+        content: "\e5cd";
+        position: absolute;
+        @include posA($top: 50%, $left: auto, $delta_x: -50%, $delta_y: -50%);
+        right: -10px;
+        font-size: 2.9rem;
+        color: $medium-gray;
+        z-index: 20;
+      }
+    }
+    &_start-search {
+      display: none;
+    }
+
+    &_field {
+      border: none;
+      border-radius: 2px;
+      position: relative;
+
+      width: 100%;
+      padding: 8px 40px 8px 8px;
+
+      &::placeholder {
+        color: $light-gray;
+      }
+
+      &:focus {
+        outline: none;
+        &::placeholder {
+          color: transparent;
+        }
+      }
+    }
+  }
+}
+.search-desktop {
+  display: none;
+  @media screen and (min-width: 900px){
+    display: block;
+  }
+  &__open-icon {
+    @include  posA($top:18px,$left:20px,$delta_x:-50%,$delta_y:-50%);
+    &:before {
+      content: "\e8b6";
+      font-size: 2.3rem;
+      color: #ACACAC;
+    }
+  }
+
+  &__form {
+    &-wrapper {
+      position: relative;
+    }
+    &-field {
+      min-width: 300px;
+      background-color: #252525;
+      border: 1px solid #252525;
+      outline: none;
+      color: #ACACAC;
+      padding: 8px 10px 6px 35px;
+      &::placeholder {
+        color: #ACACAC;
+        font-size: 1.6rem;
+      }
+    }
+  }
+}

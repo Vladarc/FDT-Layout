@@ -1,0 +1,22 @@
+
+.social{
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    &__item{
+        display: inline-flex;
+        margin: 5px;
+    }
+    &__link
+    {
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #252525;
+          height: 41px;
+          width: 41px;
+    }
+}

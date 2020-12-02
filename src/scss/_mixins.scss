@@ -1,0 +1,67 @@
+@mixin font ($ff: inherit, $fz:inherit,$fc:inherit,$fw:400,$lh:1.6){
+font-family: $ff;
+font-size: $fz;
+line-height: $lh;
+font-weight: $fw;
+color:$fc
+}
+
+@mixin posA($top:50%,$left:50%,$delta_x:-50%,$delta_y:-50%) {
+    position: absolute;
+    top: $top;
+    left: $left;
+    transform: translate($delta_x,$delta_y);
+}
+
+@mixin tr(){
+    transition: all .3s ease-in;
+}
+
+@mixin hover () {
+    @include tr;
+    &:hover,
+    &:focus,
+    &:active{
+        @content
+    }
+}
+
+@mixin center($position) {
+    position: absolute;
+    
+    @if $position == 'vertical' {
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+    @else if $position == 'horizontal' {
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      transform: translate(-50%);
+    }
+    @else if $position == 'both' {
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  @mixin flex($jc: space-between, $ali: center, $df: flex) {
+    display: $df;
+    justify-content: $jc;
+    align-items: $ali;
+}
+
+@mixin page_title($fz:2rem,$fw:600,$ttu:uppercase,$cl:$light-dark ,$mr:0 0 17px 17px){
+
+  font-size: $fz ;
+  font-weight: $fw;
+  text-transform: $ttu;
+  color: $cl;
+  margin:$mr;
+
+}
