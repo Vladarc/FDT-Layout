@@ -18,5 +18,8 @@
         background-color: #252525;
           height: 41px;
           width: 41px;
+        @include hover() {
+            border-radius: 35%;
+        }
     }
 }
