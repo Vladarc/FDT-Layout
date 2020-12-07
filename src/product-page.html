@@ -38,9 +38,24 @@
             </div>
 
             <div class="product-info">
-                <div class="product-daily-view">
-                    <span class="product-daily-view_count">9</span>
-                    others have looked at this page today
+                <div class="product-daily-view-desktop">
+                    <div class="product-daily-view-desktop_rating">
+                        <div class="rating">
+                            <ul class="rating__list ul-normalize">
+                                <li class="rating__item rating__item--icon-star rating__item--filled"></li>
+                                <li class="rating__item rating__item--icon-star rating__item--filled"></li>
+                                <li class="rating__item rating__item--icon-star rating__item--filled"></li>
+                                <li class="rating__item rating__item--icon-star rating__item--filled"></li>
+                                <li class="rating__item rating__item--icon-star"></li>
+                            </ul>
+                        </div>
+                        <span class="customer-reviews__count">3</span> reviews
+                    </div>
+
+                    <div class="product-daily-view">
+                        <span class="product-daily-view_count">9</span>
+                        others have looked at this page today
+                    </div>
                 </div>
                 <h1 class="product-info_title">
                     Heavy Duty Best Dog Collar for Training with Handle
@@ -49,12 +64,12 @@
                     Model: <span>C33##1073 2 ply leather agitation collar</span>
                 </div>
             </div>
-
-            <div class="product-image-wrapper">
+            <div class="product-desktop-wrapper">
+                    <div class="product-image-wrapper">
                 <img
                   src="./img/product_image.jpg"
                   alt="Product image"
-                  class="product-image-wrapper_img"
+                  class="product-image-wrapper_img "
                 >
             <ul class="ul-normalize product-image-list">
                 <li class="product-image-list_item">
@@ -71,8 +86,8 @@
                 </li>
           </ul>
         </div>
-
-            <div class="product-attributes">
+                <div class="attribute-desktop-wrapper">
+                    <div class="product-attributes">
                 <div class="wrapperAttribsOptions">
                     <span class="attribute-label">Color</span>
                     <div class="select-color">
@@ -142,21 +157,81 @@
                     </div>
                 </div>
             </div>
-
-            <div class="customer-tools">
-            <a href="#" class="customer-tools__link">
-                <img src="./img/svg/like.svg" alt="like" class="customer-tools__img">
-                <span class="customer-tools__text">Add to Favorites</span>
-            </a>
-             <a href="#" class="customer-tools__link">
-                 <img src="./img/svg/compare.svg" alt="like" class="customer-tools__img">
-                 <span class="customer-tools__text">Add to Compare</span>
-             </a>
+                    <div class="customer-tools">
+                <a href="#" class="customer-tools__link">
+                    <img src="./img/svg/like.svg" alt="like" class="customer-tools__img">
+                    <span class="customer-tools__text">Add to Favorites</span>
+                </a>
+                <a href="#" class="customer-tools__link">
+                    <img src="./img/svg/compare.svg" alt="like" class="customer-tools__img">
+                    <span class="customer-tools__text">Add to Compare</span>
+                </a>
             </div>
-
+                </div>
+            </div>
             //= components/products-description.html
 
+            <section class="customer-purchased">
+                <h2 class="customer-purchased__title">Customers also purchased</h2>
+                <div class="slider-recommended">
+                    <div class="slide-recommended">
+                        <div class="product-card">
+                            <a href="#" class="product-card__wrapper">
+                                <img src="./img/leash.png" alt="mask" class="product-card__img">
+                            </a>
+                            <div class="rating">
+                                <ul class="rating__list ul-normalize">
+                                    <li class="rating__item rating__item--icon-star rating__item--filled"></li>
+                                    <li class="rating__item rating__item--icon-star rating__item--filled"></li>
+                                    <li class="rating__item rating__item--icon-star rating__item--filled"></li>
+                                    <li class="rating__item rating__item--icon-star rating__item--filled"></li>
+                                    <li class="rating__item rating__item--icon-star"></li>
+                                </ul>
+                            </div>
+                            <div class="product-card__title">
+                                Agitation, protection,
+                                leather dog collar
+                            </div>
+                            <div class="price price--product-card">
+                                $39.90
+                            </div>
+                            <div class="product-card__bottom">
+
+                                <div class="product-card__select-option" >
+                                    <a href="#" class="btn btn--select-options">
+                                        Select options
+                                    </a>
+                                </div >
+                                <div class="product-model">
+                                    <span>Model:</span>
+                                    <strong>
+                                        L313#1073
+                                        Leather leash 1/2 snap hook
+                                    </strong>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-top-arrows">
+                        <div class="slider-arrow slider-arrow--left">
+                            <i class="material-icons top-arrows-left">
+                                arrow_back_ios
+                            </i>
+                        </div>
+                        <div class="slider-arrow  slider-arrow--right">
+                            <i class="material-icons top-arrows-right">
+                                arrow_forward_ios
+                            </i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
         </main>
+        <div class="left-column" >
+            //= components/category-left.html
+        </div>
     </div>
 </div>
 //= components/footer.html
