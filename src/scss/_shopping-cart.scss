@@ -1,0 +1,110 @@
+@import "mixins";
+.shopping-cart {
+
+  &__title {
+    padding: 0 16px;
+    font-size: 2.6rem;
+  }
+
+  &__description {
+    padding: 10px 16px;
+  }
+
+  &__total {
+    position: relative;
+    padding: 10px 16px;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 16px;
+      width: 90%;
+      height: 2px;
+      background:linear-gradient(90deg, rgba(0, 0, 0, 0.11) 0%, rgba(0, 0, 0, 0) 43.13%); ;
+    }
+  }
+}
+
+.customer-order {
+  margin: 0 16px;
+  padding: 70px 0 10px;
+  background-color: #444444;
+  box-shadow: 0 0 60px -44px #000000;
+  border-radius: 3px;
+  position: relative;
+  color: #fff;
+  &__table {
+    width: 100%;
+    &,tr,td,tbody {
+      display: block;
+    }
+  }
+  &__item {
+    &-delete {
+      &_icon {
+        font-family: 'Material Icons';
+        font-weight: 600;
+        font-size: 2.8rem;
+        color:#E7E7E7
+      }
+      position: absolute;
+      top: 5px;
+      right: 16px;
+
+    }
+    &-qty {
+      display: inline-flex!important;
+      transform: translateX(-65px);
+    }
+    &-unit {
+      display: inline-flex!important;
+      transform: translateX(200px);
+    }
+    &-total {
+      padding: 15px 16px;
+      span {
+        font-size: 2.2rem;
+        font-weight: 600;
+      }
+    }
+  }
+
+
+  &__img-wrapper {
+    width: 250px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding-top: 80%;
+    position: relative;
+    img {
+      @include posA();
+      object-fit: cover;
+    }
+  }
+
+  &__product-name {
+    position: absolute;
+    top: 10px;
+    left: 17px;
+    max-width: 210px;
+    margin: 0;
+    font-size: 1.8rem;
+    line-height: 1.2;
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
+  }
+
+  &__attributes {
+    padding: 10px 10px 20px 16px;
+    &_item {
+      & + & {
+        margin-top: 10px;
+      }
+      span {
+        font-weight: 600;
+      }
+    }
+  }
+}

@@ -13,9 +13,6 @@ html {
 body {
   @include font($body-ff, 1.6rem, $fc: $body-color, $lh: 1);
   background-color: $body-bg;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
 }
 .container {
   @media screen and (min-width:1150px) {
@@ -1231,3 +1228,4 @@ input[type=number]::-webkit-outer-spin-button {
     }
   }
 }
+@import "shopping-cart";
