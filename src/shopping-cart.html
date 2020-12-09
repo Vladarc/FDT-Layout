@@ -24,7 +24,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="shopping-cart">
+            <section class="shopping-cart">
                 <h2 class="shopping-cart__title">Shopping Cart</h2>
                 <div class="shopping-cart__description">
                     You may proceed with your purchase by clicking the Checkout button below. Shipping and Taxes and Discounts will be handled on subsequent pages.
@@ -54,6 +54,16 @@
                 </div>
                 <div class="customer-order">
                     <table class="customer-order__table">
+                        <thead>
+                        <tr>
+                            <th>Item Image</th>
+                            <th>Item Name</th>
+                            <th>Unit</th>
+                            <th>Qty.</th>
+                            <th>Delete</th>
+                            <th>Total</th>
+                        </tr>
+                        </thead>
                         <tbody>
                         <tr>
                             <td class="customer-order__item-img">
@@ -101,6 +111,7 @@
                                 <span class="customer-order__item-delete_icon">
                                     close
                                 </span>
+                                <img src="./img/svg/trash-icon.svg" alt="trash icon" class="customer-order__item-delete_icon-desktop">
                             </td>
                             <td class="customer-order__item-total">
                                 <span>$39.90</span>
@@ -109,8 +120,88 @@
                         </tbody>
                     </table>
                 </div>
-            </div>
+                <div class="cart-total">
+                    <div class="sub-total">
+                        <span class="sub-total__text">SUB-TOTAL:</span>
+                        <span class="sub-total__price">
+                     <strong>$39.90</strong>
+                    </span>
+                    </div>
+                    <div class="cart-btns">
+                        <a href="#" class="btn btn--continue-shopping">
+                            <img src="./img/svg/cart-left.svg" alt="">
+                            Continue Shopping
+                        </a>
+                        <a href="#" class="btn btn--primary btn--checkout">
+                            <img src="./img/svg/cart-right.svg" alt="">
+                            Checkout
+                        </a>
+                    </div>
+                </div>
+            </section>
+           <section class="cart-promo">
+               <h3 class="cart-promo__title">Promo Code</h3>
+               <form action="" method="POST" class="cart-promo__form">
+                    <div  class="cart-promo__wrapper">
+                        <label for="promo-code">
+                            Enter the promo code if you have:
+                        </label>
+                        <input
+                            type="text"
+                            id="promo-code"
+                            name="promo-code"
+                            class="cart-promo__field"
+                        >
+                        <button type="submit" class="btn btn--promo-code">Apply</button>
+                    </div>
+               </form>
+           </section>
+            <section class="shipping-cost">
+                <h4 class="shipping-cost__title">Estimate shipping costs </h4>
+                <div class="shipping-cost__wrapper">
+                    <form method="POST" action="#" class="shipping-cost__form">
+                        <label for="country" class="shipping-cost__label">Country:</label>
+                        <select id="country" class="shipping-cost__select">
+                            <option selected>United States</option>
+                        </select>
+                        <label for="state" class="shipping-cost__label">State/Province:</label>
+                        <select id="state" class="shipping-cost__select">
+                            <option selected>Please Select...</option>
+                        </select>
+                        <label for="zip-code" class="shipping-cost__label">Post/Zip Code:</label>
+                        <input type="text" id="zip-code" class="shipping-cost__field">
+                        <button type="submit" class="btn btn--shipping-cost">Update</button>
+                    </form>
+                    <div class="shipping-cost__wrapper-table" >
+                    <table class="shipping-cost__table">
+                        <caption>
+                            Shipping quotes are based on the address information you selected:
+                            <span><strong>United States</strong></span>
+                        </caption>
+                        <thead>
+                            <tr>
+                                <th>Available Shipping Methods</th>
+                                <th>Rates</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>USA Urgent handling and air shipping (3-5 business days) (Shipping to US)</td>
+                                <td>$21.85</td>
+                            </tr>
+                            <tr>
+                                <td>UPS ground (Shipping to US)</td>
+                                <td>$21.85</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                </div>
+            </section>
         </main>
+        <div class="left-column" >
+            //= components/category-left.html
+        </div>
     </div>
 </div>
 //= components/footer.html

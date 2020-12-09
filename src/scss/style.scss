@@ -252,6 +252,7 @@ img {
     // border-radius: 0 0 4px 4px;
     @media screen and (min-width: 900px) {
       opacity:0;
+      z-index: 3;
     }
     padding: 0 18px 10px;
   }
@@ -267,6 +268,56 @@ img {
   color: $secondary-color;
   border-radius: 2px;
   position: relative;
+
+  &--shipping-cost {
+    padding: 5px 35px;
+    color: #555;
+    background-color: #EFEFEF;
+    border: 1px solid #E3E3E3;
+  }
+
+  &--promo-code {
+    padding: 5px 35px;
+    color: #555;
+    background-color: #EFEFEF;
+    border: 1px solid #E3E3E3;
+  }
+
+  &--continue-shopping {
+    padding: 35px 15px 10px;
+    background-color: #EFEFEF;
+    border: 1px solid #E3E3E3;
+    color: #555555;
+
+    img {
+      @include posA($top:15px,$left:50%,$delta_x:-50%,$delta_y:-50%);
+    }
+
+    @media screen and (min-width: 480px) {
+      padding: 10px 25px 10px 50px;
+      img {
+        @include posA($top:50%,$left:25px,$delta_x:-50%,$delta_y:-50%);
+      }
+    }
+
+    @media screen and (min-width: 700px) {
+    margin-right: 10px;
+    }
+  }
+
+  &--checkout {
+    padding: 35px 25px 10px;
+    img {
+      @include posA($top:15px,$left:50%,$delta_x:-50%,$delta_y:-50%);
+    }
+    @media screen and (min-width: 480px) {
+      padding: 10px  60px 10px 35px;
+      img {
+        @include posA($top:50%,$left:auto,$delta_x:-50%,$delta_y:-50%);
+        right: 10px;
+      }
+    }
+  }
 
   &--cart {
     img {
@@ -415,7 +466,14 @@ img {
 .reviews {
   padding: 25px 10px 25px 15px;
   @media screen and (min-width: 900px) {
-    padding:35px 0 0 0 ;
+    padding: 35px 0  ;
+  }
+  &--bestsellers {
+    display: none;
+    @media screen and (min-width: 900px) {
+      display: block;
+
+    }
   }
   &__title {
 
@@ -652,6 +710,9 @@ img {
 
 .breadcrumbs {
   padding: 11px 16px ;
+  @media screen and (min-width: 900px) {
+    padding: 11px 0 ;
+  }
   &-list {
     border-radius: 3px;
     background: linear-gradient(90deg, #EDEDED 0%, #F9F9F9 100%);

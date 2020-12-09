@@ -13,6 +13,16 @@
   &__total {
     position: relative;
     padding: 10px 16px;
+    &_list {
+      @media screen and (min-width: 900px) {
+        display: flex;
+      }
+    }
+    &_item + &_item {
+      @media screen and (min-width: 900px) {
+       margin-left: 10px;
+      }
+    }
     &:after {
       content: '';
       position: absolute;
@@ -33,10 +43,70 @@
   border-radius: 3px;
   position: relative;
   color: #fff;
+
+  @media screen and (min-width: 900px) {
+    padding: 0;
+    background-color: transparent;
+    margin: 0 ;
+    &__mob-text {
+      display: none;
+    }
+    color: #666;
+  }
   &__table {
     width: 100%;
     &,tr,td,tbody {
       display: block;
+    }
+    & thead {
+      display: none;
+      @media screen and (min-width: 900px) {
+        display: table-header-group;
+        background-color: #666;
+        color: #fff;
+        & th {
+          padding: 5px 10px;
+          text-transform: uppercase;
+        }
+      }
+      @media screen and (min-width: 1100px ) {
+        & th {
+          padding: 15px ;
+        }
+      }
+    }
+    @media screen and (min-width: 900px) {
+      border-collapse: collapse;
+
+      & {
+        display: table;
+
+      }
+      & tr {
+        display: table-row;
+
+      }
+      & th {
+        border-right: 1px solid rgba(#fff,.2);
+        &:first-child {
+          border-radius: 3px 0 0 0;
+        }
+        &:last-child {
+          border-radius: 0 3px 0 0;
+        }
+      }
+
+      & td {
+        display: table-cell;
+        padding: 5px;
+        border: 1px solid rgba(#000,.2);
+        @media screen and (min-width: 1100px) {
+          padding: 15px;
+        }
+      }
+      & tbody {
+        display: table-row-group;
+      }
     }
   }
   &__item {
@@ -45,23 +115,68 @@
         font-family: 'Material Icons';
         font-weight: 600;
         font-size: 2.8rem;
-        color:#E7E7E7
+        color:#E7E7E7;
+        &-desktop {
+          display: none;
+        }
+        @media screen and (min-width: 900px) {
+          display: none;
+
+          &-desktop {
+            display: block;
+            margin: 0 auto;
+          }
+        }
+
       }
       position: absolute;
       top: 5px;
       right: 16px;
-
+      @media screen and (min-width: 900px) {
+        position: static;
+      }
     }
     &-qty {
       display: inline-flex!important;
       transform: translateX(-65px);
+      @media screen and (min-width: 600px) {
+        transform: translateX(85px);
+      }
+      @media screen and (min-width: 750px) {
+        transform: translateX(100px);
+      }
+      @media screen and (min-width: 900px) {
+        transform: translateX(0);
+        display:table-cell!important;
+      }
+
     }
     &-unit {
       display: inline-flex!important;
       transform: translateX(200px);
+      @media screen and (min-width: 600px) {
+        transform: translateX(400px);
+      }
+      @media screen and (min-width: 750px) {
+        transform: translateX(500px);
+      }
+      @media screen and (min-width: 850px) {
+        transform: translateX(600px);
+      }
+      @media screen and (min-width: 900px) {
+        transform: translateX(0);
+        display:table-cell!important;
+        font-size: 2.1rem;
+        font-weight: 600;
+        text-align: center;
+      }
     }
     &-total {
       padding: 15px 16px;
+      @media screen and (min-width: 900px) {
+        padding: 15px 0;
+        text-align: center;
+      }
       span {
         font-size: 2.2rem;
         font-weight: 600;
@@ -76,9 +191,33 @@
     overflow: hidden;
     padding-top: 80%;
     position: relative;
+    @media screen and (min-width: 480px) {
+      width: 300px;
+      padding-top: 60%;
+    }
+    @media screen and (min-width: 600px) {
+    width: 300px;
+    padding-top: 50%;
+  }
+    @media screen and (min-width: 900px) {
+      width: 150px;
+      padding-top: 100%;
+      border: 1px solid rgba(#000, .2);
+      border-radius: 3px;
+    }
+    @media screen and (min-width: 1150px) {
+      padding-top: 90%;
+    }
+    @media screen and (min-width: 1350px) {
+      padding-top: 70%;
+    }
     img {
       @include posA();
       object-fit: cover;
+      @media screen and (min-width: 900px) {
+        min-width: 100%;
+        min-height: 100%;
+      }
     }
   }
 
@@ -94,10 +233,30 @@
       text-decoration: none;
       color: #fff;
     }
+    @media screen and (min-width: 900px) {
+      position: static;
+      text-align: center;
+      a {
+        color: #FF7900;
+
+      }
+    }
+    @media screen and (min-width: 1000px) {
+      text-align: left;
+    }
   }
 
   &__attributes {
     padding: 10px 10px 20px 16px;
+    @media screen and (min-width: 600px) {
+      text-align: center;
+    }
+    @media screen and (min-width: 900px) {
+      padding: 10px 0 20px 0;
+    }
+    @media screen and (min-width: 1000px) {
+      text-align: left;
+    }
     &_item {
       & + & {
         margin-top: 10px;
@@ -105,6 +264,202 @@
       span {
         font-weight: 600;
       }
+    }
+  }
+}
+.cart {
+
+  &-total {
+    padding: 0 0 25px;
+    @media screen and (min-width: 700px) {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    @media screen and (min-width: 900px) {
+      flex-flow: row wrap;
+      border-bottom: 1px solid rgba(#000, .1);
+
+    }
+    @media screen and (min-width: 1000px) {
+      justify-content: space-between;
+    }
+  }
+
+  &-btns {
+    padding: 0 5px;
+    justify-content: space-around;
+    display: flex;
+  }
+
+  &-promo {
+    padding: 0 16px;
+
+    @media screen and (min-width: 900px) {
+      padding: 0;
+    }
+    &__form {
+      background-color: #F6F6F6;
+      border: 1px solid rgba(0,0,0,0.2);
+      border-radius: 3px;
+      padding: 20px 11px;
+      margin-bottom: 40px;
+    }
+
+    &__title {
+      padding: 0 11px;
+      font-size: 2.2rem;
+    }
+
+    &__wrapper {
+      label {
+        flex:0 1 100%;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+      }
+      @media screen and (min-width: 900px) {
+        display: flex;
+        flex-flow: row wrap;
+      }
+    }
+
+    &__field {
+      display: inline-block;
+      width: 100%;
+      background-color: #fff;
+      border: 1px solid #E3E3E3;
+      padding: 5px 10px;
+      margin: 10px 0 30px;
+      @media screen and (min-width: 900px) {
+        flex: 0 1 75%;
+        margin: 0 15px 0 0;
+      }
+    }
+  }
+}
+.sub-total {
+  font-size: 2.2rem;
+  padding: 30px 16px 20px;
+  &__price {
+    color: #FF7900;
+  }
+}
+
+.shipping-cost {
+  padding: 0 16px;
+  @media screen and (min-width: 900px) {
+    padding: 0 ;
+    margin-bottom: 40px;
+  }
+  &__wrapper {
+    @media screen and (min-width: 1000px) {
+      display: flex;
+      align-items: flex-start;
+    }
+  }
+  &__form {
+    background-color: #F6F6F6;
+    padding: 11px 11px 20px;
+    margin-bottom: 40px;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    @media screen and (min-width: 1000px) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    padding: 0 11px;
+    font-size: 2.2rem;
+  }
+
+  &__select ,
+  &__field {
+    display: inline-block;
+    width: 100%;
+    border: 1px solid #E3E3E3;
+    border-radius: 3px;
+  }
+
+  &__field {
+  margin-bottom: 15px;
+  padding: 5px 10px;
+  }
+
+  &__label {
+    display: inline-block;
+    padding: 0 0 10px;
+    text-transform: uppercase;
+  }
+
+  &__select {
+    margin-bottom: 15px;
+    appearance: none;
+    padding: 5px 10px;
+    background-image: url(../../img/select-arrow.png);
+    background-repeat: no-repeat;
+    background-position-x: 95%;
+    background-position-y: 50%;
+  }
+  &__wrapper-table {
+    @media screen and (min-width: 900px) {
+      padding: 20px;
+      background-color: #F6F6F6;
+      border: 1px solid rgba(0,0,0,0.2);
+      border-radius: 3px;
+    }
+    @media screen and (min-width: 1000px) {
+      margin-left: 10px;
+    }
+  }
+
+  &__table {
+    border-radius: 3px;
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 40px;
+    @media screen and (min-width: 1000px) {
+      margin-bottom: 0;
+    }
+    & caption {
+      border: 1px solid rgba(0,0,0,.2);
+      border-bottom: none;
+      padding: 10px 11px;
+      @media screen and (min-width: 900px) {
+        border: none;
+        text-align: left;
+      }
+    }
+    & th ,
+    & td,{
+      border: 1px solid rgba(0,0,0,.2);
+      padding: 10px 5px;
+      @media screen and (min-width: 900px) {
+        padding: 15px;
+      }
+    }
+  }
+}
+
+.empty-cart-warning {
+  margin: 0 16px;
+  padding: 50px 5px;
+  text-align: center;
+  background-color: #444444;
+  box-shadow: 0 0 60px -44px #000000;
+  border-radius: 3px;
+  @media screen and (min-width: 900px) {
+    margin: 0 0 60px;
+    background-color: #F6F6F6;
+    padding: 80px 5px;
+    border: 1px solid rgba(#000, .2);
+  }
+  span {
+    color:#fff;
+    font-size: 1.8rem;
+    @media screen and (min-width: 900px) {
+      color: #303030;
+      font-size: 2rem;
     }
   }
 }
