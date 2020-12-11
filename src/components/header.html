@@ -1,15 +1,17 @@
 <header class="header">
+  //= dropdown-cart.html
+ <!-- //= dropdown-cart-empty.html -->
   <div class="header__top">
     <div class="container">
       <div class="header__top_wrapper">
         <div class="payment-wrapper">
           <picture>
-          <source srcset="./img/payment-desktop.png" media="(min-width: 1000px)">
-          <img
-            src="../img/payment.png"
-            alt="payment"
-            class="payment-wrapper__img"
-          />
+            <source srcset="./img/payment-desktop.png" media="(min-width: 1000px)">
+            <img
+                    src="../img/payment.png"
+                    alt="payment"
+                    class="payment-wrapper__img"
+            />
           </picture>
         </div>
         <div class="search-desktop">
@@ -26,13 +28,13 @@
             />
             <input type="hidden" name="search_in_description" value="1" />
             <div class="search-desktop__form-wrapper">
-            <input
-                    type="text"
-                    name="keyword"
-                    id="search--top-desktop"
-                    placeholder="Search..."
-                    class="search-desktop__form-field"
-            />
+              <input
+                      type="text"
+                      name="keyword"
+                      id="search--top-desktop"
+                      placeholder="Search..."
+                      class="search-desktop__form-field"
+              />
               <span class="search-desktop__open-icon search__open-form--icon-o">&nbsp;</span>
             </div>
           </form>
@@ -68,7 +70,7 @@
           <a href="#">
             <picture>
               <source srcset="./img/Logo_desktop.png" media="(min-width: 1050px)">
-            <img src="../img/Logo.png" alt="Logo" />
+              <img src="../img/Logo.png" alt="Logo" />
             </picture>
           </a>
         </div>
@@ -98,9 +100,9 @@
           <div class="cart__wrapper">
             <span class="cart__wrapper_count">0</span>
             <img
-              src="../img/svg/cart.svg"
-              alt="Cart"
-              class="cart__wrapper_img"
+                    src="../img/svg/cart.svg"
+                    alt="Cart"
+                    class="cart__wrapper_img"
             />
           </div>
           <span class="cart__text">Cart</span>
@@ -115,9 +117,9 @@
           <ul class="menu-list">
 
             <li class="menu-list__item">
-             <a href="#" class="menu-list__link" >
-               Home
-             </a>
+              <a href="#" class="menu-list__link" >
+                Home
+              </a>
             </li>
 
             <li class="menu-list__item">
@@ -172,30 +174,30 @@
         <div class="search">
           <span class="search__open-form search__open-form--icon-o">&nbsp;</span>
           <form
-            name="quick_find_header"
-            action="#"
-            method="GET"
-            class="search__form"
+                  name="quick_find_header"
+                  action="#"
+                  method="GET"
+                  class="search__form"
           >
             <input
-              type="hidden"
-              name="main_page"
-              value="advanced_search_result"
+                    type="hidden"
+                    name="main_page"
+                    value="advanced_search_result"
             />
             <input type="hidden" name="search_in_description" value="1" />
             <div class="search__form_input">
               <div class="resultsContainer"></div>
               <div class="search__form_wrapper">
-              <span class="search__form_close search__form_close--icon-close"></span>
-              <input
-                type="text"
-                name="keyword"
-                id="search-top"
-                placeholder="Search..."
-                class="search__form_field "
-              />
-              <button type="submit" class="search__form_start-search search__form_start-search--icon-search"></button>
-            </div>
+                <span class="search__form_close search__form_close--icon-close"></span>
+                <input
+                        type="text"
+                        name="keyword"
+                        id="search-top"
+                        placeholder="Search..."
+                        class="search__form_field "
+                />
+                <button type="submit" class="search__form_start-search search__form_start-search--icon-search"></button>
+              </div>
             </div>
           </form>
         </div>

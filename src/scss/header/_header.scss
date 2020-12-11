@@ -1,3 +1,4 @@
+@import "../mixins";
 .header {
 
   &__top {
@@ -206,4 +207,220 @@ display: none;
      padding: 0 5px;
    }
  }
+}
+
+.dropdown-cart {
+  position: fixed;
+  top:0;
+  left: 0;
+  width: 100vw;
+  background-color: #303030;
+  z-index: 20;
+  padding: 20px 20px 50px;
+  will-change: transform;
+  transform: translateY(-100%);
+  @media screen and (min-width:900px) {
+    padding: 20px;
+  }
+  @media screen and (min-width:900px) {
+    max-height: 80vh;
+    overflow-y: scroll;
+  }
+  @include tr();
+  &.dropdown-cart--open {
+    transform: translateY(0);
+    @include tr();
+  }
+
+  &__header {
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-align: center;
+    @media screen and (min-width: 900px) {
+      position: relative;
+    }
+    padding: 10px 0;
+
+    @media screen and (min-width: 900px) {
+      text-align: left;
+      margin-bottom: 20px;
+    }
+
+    &__close {
+      @include posA($top:auto,$left:50%,$delta_x:-50%,$delta_y:-50%);
+      bottom: 0;
+      right: -15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;color:#fff;
+      @media screen and (min-width: 900px) {
+        @include posA($top:50%,$left:auto,$delta_x:-50%,$delta_y:-50%);
+      }
+      &_icon {
+        font-family: 'Material Icons';
+        font-weight: 500;
+        font-size: 3rem;
+      }
+      &_mob {
+        display: inherit;
+        @media screen and (min-width:900px) {
+          display: none;
+        }
+      }
+
+    }
+  }
+
+  &__content {
+    padding-bottom: 15px;
+  }
+
+  &__item {
+
+    position: relative;
+
+    @media screen and (min-width: 900px) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+    }
+
+    & + & {
+      margin-top: 25px;
+    }
+
+  }
+
+  &__delete {
+    @include posA($top:35%,$left:auto,$delta_x:-50%,$delta_y:-50%);
+    right: -10px;
+
+    @media screen and (min-width: 900px) {
+      position: static;
+      width: 40px;
+    }
+  }
+
+  &__image {
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+    overflow: hidden;
+    border: 1px solid rgba(#fff, .3);
+    border-radius: 3px;
+    @media screen and (min-width: 900px) {
+      width: 150px;
+      height: 150px;
+    }
+    img {
+      object-fit: cover;
+      @media screen and (min-width: 900px) {
+        min-height: 100%;
+        min-width: 100%;
+      }
+
+    }
+  }
+
+  &__name {
+    display: inline-block;
+    max-width: 170px;
+    vertical-align: top;
+    @media screen and (min-width: 900px) {
+      align-self: flex-start;
+      padding-left: 15px;
+      max-width: none;
+      margin-right: auto;
+    }
+
+    &_details {
+      display: none;
+      @media screen and (min-width: 900px) {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        a {
+          color: #FF7900;
+        }
+      }
+    }
+
+    h2 {
+      margin: 0;
+      color: #fff;
+      font-size: 1.8rem;
+      font-weight: 500;
+      @media screen and (min-width: 900px) {
+        margin: 0 0 20px;
+        max-width: 272px;
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media screen and (min-width: 900px) {
+      margin-right: auto;
+    }
+    &_qty {
+      color: #fff;
+      height: 30px;
+      width: 30px;
+      line-height: 30px;
+      text-align: center;
+      border: 1px solid rgba(#fff, .3);
+      border-radius: 3px;
+      margin-right: 30px;
+      @media screen and (min-width: 900px) {
+        height: 40px;
+        width: 50px;
+        line-height: 40px;
+
+      }
+    }
+
+    &_price {
+      color: #fff;
+      font-size: 1.8rem;
+    }
+
+  }
+
+  &__footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    @media screen and (min-width:900px) {
+      border-top: 1px solid #E3E3E3;
+      border-bottom: none;
+    }
+    padding-top: 10px;
+    &_total {
+      color: #fff;
+      font-size: 2rem;
+      span {
+        color: #FF7900;
+      }
+    }
+    &_btns {
+      padding: 10px 0 0;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-around;
+      @media screen and (min-width: 900px) {
+        justify-content: space-between;
+      }
+
+    }
+    &_empty-cart {
+      padding: 12px 0 22px;
+      text-align: center;
+      color: #FF7900;
+      font-size: 1.7rem;
+    }
+  }
 }
