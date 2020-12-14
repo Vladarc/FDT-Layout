@@ -115,7 +115,7 @@ img {
   @media screen and (min-width: 900px) {
     order: 2;
   }
-  margin-top: 35px;
+  margin: 35px 0;
   position: relative;
 
   &__title {
@@ -220,6 +220,8 @@ img {
     opacity: 1;
   }
 
+
+
   &__wrapper {
     padding-top: 100%;
     overflow: hidden;
@@ -245,16 +247,26 @@ img {
   }
   &__bottom {
     width: 101%;
-    @include posA($top: 110%, $left: 50%, $delta_x: -50%, $delta_y: -50%);
+    @include posA($top: 115%, $left: 50%, $delta_x: -50%, $delta_y: -50%);
     background-color: $secondary-color;
     border: $border-width solid rgba(227, 227, 227, 1);
     border-top: none;
-    // border-radius: 0 0 4px 4px;
+
     @media screen and (min-width: 900px) {
-      opacity:0;
+      opacity: 0;
       z-index: 3;
+      top: 125%;
     }
     padding: 0 18px 10px;
+  }
+
+  &__customer-tools {
+    display: none;
+    @media screen and (min-width: 900px) {
+    display: block;
+    margin: 0 0 10px;
+    text-align: center;
+    }
   }
 }
 
@@ -418,6 +430,25 @@ img {
   font-weight: 500;
   color: #444444;
   text-align: center;
+  height: 40px;
+  overflow: hidden;
+  strong {
+    overflow: hidden;
+    text-overflow:ellipsis;
+  }
+
+}
+.customer-tool-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F7F7F7 ;
+    border-color: transparent;
+    border-radius: 2px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    cursor: pointer;
 }
 
 .middle-banner {
@@ -425,7 +456,7 @@ img {
     order: 1;
     margin-bottom: 30px;
   }
-  margin-top: 10px;
+  margin-top: 25px;
 
   &__wrapper {
     overflow: hidden;
@@ -468,6 +499,7 @@ img {
       font-weight: 500;
     }
   }
+
   &__title {
     display: flex;
     h3 {
@@ -480,12 +512,22 @@ img {
       align-self: flex-start;
     }
   }
+
   &__subtitle {
     font-weight: 600;
+    font-size: 2rem;
+    margin: 10px 0;
+  }
+  &__image-wrapper {
+    img {
+      display: block;
+      margin: 0 auto;
+    }
   }
   &__link {
     color: $primary-color;
   }
+
 }
 
 .reviews {
@@ -721,6 +763,7 @@ img {
     background-color: #FF7900;
   }
 }
+
 .product-header {
   background-color: #303030;
 
@@ -1033,6 +1076,7 @@ img {
     border-radius: 3px;
   }
 }
+
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -1190,12 +1234,14 @@ input[type=number]::-webkit-outer-spin-button {
     padding-bottom: 25px;
   }
 }
+
 .product-description-title-bg {
   background-image: url("../../img/product-title-bg.png");
   background-repeat: no-repeat;
   background-position: left;
   background-size: contain;
 }
+
 .customer-reviews {
   border-bottom: 1px solid rgba(0,0,0,.3);
   background-color: #fff;
@@ -1247,10 +1293,12 @@ input[type=number]::-webkit-outer-spin-button {
     }
   }
 }
+
 .product-images-centered {
   display: block;
   margin: 0 auto;
 }
+
 .customer-purchased {
   @media screen and (min-width: 900px) {
     //margin-bottom: 50px;
@@ -1266,22 +1314,26 @@ input[type=number]::-webkit-outer-spin-button {
     }
   }
 }
+
 .product-desktop-wrapper {
   @media screen and (min-width: 900px) {
     display: flex;
   }
 }
+
 .attribute-desktop-wrapper {
   @media screen and (min-width: 900px) {
     flex: 0 1 55%;
   }
 }
+
 .product-description-desktop-wrapper {
   @media screen and (min-width: 900px) {
     display: flex;
   }
 
 }
+
 .description-navigation {
   display: none;
   @media screen and (min-width: 900px) {
