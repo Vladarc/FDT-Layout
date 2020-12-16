@@ -103,7 +103,7 @@
 .cart {
   text-decoration: none;
   display: flex;
-  padding: 12px 16px 10px;
+  padding: 15px 16px 10px;
   border: $border-width solid rgba($color: $secondary-color, $alpha: 0.21);
   border-radius: 2px;
 
@@ -117,7 +117,7 @@
     position: relative;
 
     &_count {
-      @include posA($top: 0, $left: 50%, $delta_x: -15%, $delta_y: -30%);
+      @include posA($top: -7px, $left: 50%, $delta_x: -15%, $delta_y: -30%);
       font-weight: 600;
       font-size: 1.8rem;
       color: $primary-color;

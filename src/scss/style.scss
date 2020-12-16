@@ -14,6 +14,23 @@ body {
   @include font($body-ff, 1.6rem, $fc: $body-color, $lh: 1);
   background-color: $body-bg;
 }
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background:rgba(0,0,0,.2);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  cursor:pointer;
+  background:rgba(0,0,0,.4); ;
+}
+
 .container {
   @media screen and (min-width:1150px) {
   max-width: 1600px;
@@ -241,13 +258,26 @@ img {
     font-size: 1.6rem;
     color: $light-dark;
     font-weight: 600;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    max-height: 31px;
+    @media screen and (min-width: 900px) {
+      display: block;
+
+      overflow: visible;
+      max-height: none;
+    }
   }
   &__select-option {
     text-align: center;
   }
   &__bottom {
     width: 101%;
-    @include posA($top: 115%, $left: 50%, $delta_x: -50%, $delta_y: -50%);
+    @include posA($top: auto, $left: calc(50% + 1px), $delta_x: -50%, $delta_y: 100%);
+    bottom: 0;
     background-color: $secondary-color;
     border: $border-width solid rgba(227, 227, 227, 1);
     border-top: none;
@@ -255,7 +285,7 @@ img {
     @media screen and (min-width: 900px) {
       opacity: 0;
       z-index: 3;
-      top: 125%;
+
     }
     padding: 0 18px 10px;
   }
@@ -1375,3 +1405,26 @@ input[type=number]::-webkit-outer-spin-button {
   }
 }
 @import "shopping-cart";
+
+@keyframes shakeTrash {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(-30deg);
+  }
+  50% {
+    transform: rotate(0);
+  }
+  75% {
+    transform: rotate(35deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+.dropdown-cart__delete:hover img  {
+  cursor:pointer;
+  animation: shakeTrash .3s ease-out;
+}
