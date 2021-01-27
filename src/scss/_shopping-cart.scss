@@ -79,7 +79,7 @@
       }
     }
     @media screen and (min-width: 900px) {
-      border-collapse: collapse;
+      border-collapsee: collapsee;
 
       & {
         display: table;
@@ -405,7 +405,7 @@
 
   &__table {
     border-radius: 3px;
-    border-collapse: collapse;
+    border-collapsee: collapsee;
     width: 100%;
     margin-bottom: 40px;
     @media screen and (min-width: 1000px) {

@@ -68,39 +68,39 @@ gulp.task("fonts", function () {
     .pipe(browserSync.stream());
 });
 
-gulp.task("images", function () {
-  return gulp
-    .src("src/img/**/*.*")
-    .pipe(
-      imagemin([
-        pngquant({
-          speed: 1,
-          quality: [0.95, 1],
-        }),
-        zopfli({ more: true }),
-        giflossy({
-          optimizationLevel: 3,
-          optimize: 3,
-          lossy: 2,
-        }),
-        imagemin.svgo({
-          plugins: [
-            {
-              removeViewBox: false,
-            },
-          ],
-        }),
-        jpegtran({
-          progressive: true,
-        }),
-        mozjpeg({
-          quality: 90,
-        }),
-      ])
-    )
-    .pipe(gulp.dest("dist/img"))
-    .pipe(browserSync.stream());
-});
+// gulp.task("images", function () {
+//   return gulp
+//     .src("src/img/**/*.*")
+//     .pipe(
+//       imagemin([
+//         pngquant({
+//           speed: 1,
+//           quality: [0.95, 1],
+//         }),
+//         zopfli({ more: true }),
+//         giflossy({
+//           optimizationLevel: 3,
+//           optimize: 3,
+//           lossy: 2,
+//         }),
+//         imagemin.svgo({
+//           plugins: [
+//             {
+//               removeViewBox: false,
+//             },
+//           ],
+//         }),
+//         jpegtran({
+//           progressive: true,
+//         }),
+//         mozjpeg({
+//           quality: 90,
+//         }),
+//       ])
+//     )
+//     .pipe(gulp.dest("dist/img"))
+//     .pipe(browserSync.stream());
+// });
 
 gulp.task("favicon", function () {
   return gulp.src("src/*.ico").pipe(gulp.dest("dist"));
@@ -115,7 +115,7 @@ gulp.task("clean", function () {
 // Static Server + watching scss/html files
 gulp.task(
   "serve",
-  gulp.series("html", "favicon", "images", "fonts", "js", "sass", function () {
+  gulp.series("html", "favicon", "fonts", "js", "sass", function () {
     browserSync.init({
       server: "./dist",
     });
@@ -125,7 +125,7 @@ gulp.task(
 
     gulp.watch("src/fonts/**/*.*", gulp.parallel("fonts"));
     gulp.watch("src/js/**/*.js", gulp.parallel("js"));
-    gulp.watch("'src/img/**/*.*'", gulp.parallel("images"));
+    // gulp.watch("'src/img/**/*.*'", gulp.parallel("images"));
   })
 );
 
