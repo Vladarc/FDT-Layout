@@ -1,0 +1,115 @@
+//= components/head.html
+<body>
+    //= components/header.html
+<div class="container">
+    <div class="content-wrapper">
+        <main class="main">
+            <div class="breadcrumbs">
+                <ul class="ul-normalize breadcrumbs-list">
+                    <li class="breadcrumbs-item">
+                        <a href="#" class="breadcrumbs-link">
+                            Home
+                            <span class="material-icons">
+                                keyboard_arrow_right
+                               </span>
+                        </a>
+                    </li>
+                    <li class="breadcrumbs-item">
+                        <a href="#" class="breadcrumbs-link">
+                          Checkout
+                            <span class="material-icons">
+                                keyboard_arrow_right
+                                </span>
+                        </a>
+                    </li>
+                    <li class="breadcrumbs-item">
+                      <a href="#" class="breadcrumbs-link">
+                        Shipping Method
+                          <span class="material-icons">
+                              keyboard_arrow_right
+                              </span>
+                      </a>
+                  </li>
+                </ul>
+            </div>
+            <h2 class="checkout-title">
+              Step <span>1</span> of <span>3</span> - Delivery Information
+            </h2> 
+         <form action="#" method="POST" class="checkout-form">
+            <div class="checkout-step-one-wrapper">
+              <div class="checkout-step-one__shipping-information">
+                <div class="checkout-step-one__shipping-information_title">
+                  Shipping Information:
+                </div>
+                <div class="checkout-step-one__shipping-information_content">
+                  <div class="checkout-step-one__shipping-information_row">
+                    <div class="checkout-step-one__shipping-information_adress">
+                        <span class="checkout-step-one__shipping-information_adress__title">Shipping Address</span>
+                        <ul class="checkout-step-one__shipping-information_adress_list ul-normalize">
+                          <li>Ivan Dmitriev</li>
+                          <li>fontannaya str</li>
+                          <li>Mariupol, 87515</li>
+                          <li>Donerska, Ukraine</li>
+                        </ul>
+                    </div>
+                    <div class="checkout-step-one__shipping-information_description">
+                      Your order will be shipped to this address, or you may change the shipping address by clicking the Change Address button
+                    </div>
+                  </div> 
+                  <a href="#" class="btn btn--grey">Change Address</a>
+                </div>
+              </div>
+              <div class="checkout-step-one__shipping-methods">
+                <div class="checkout-step-one__shipping-methods_title">
+                  Shipping method:
+                </div>
+                <div class="checkout-step-one__shipping-methods_content">
+                  <div class="checkout-step-one__shipping-methods_content__subtitle">Please select the preferred shipping method to use on this order.</div>
+                    <div class="checkout-step-one__shipping-methods_choose_method">
+                        <div class="checkout-step-one__shipping-methods_choose_method__title">Registered Mail (9-20 business days) </div>
+                        <div class="checkout-step-one__shipping-methods_choose_method__input">
+                          <label class="checkout-step-one__shipping-methods_choose_method__label">
+                            <input type="radio">
+                            <span class="checkout-step-one__shipping-methods_choose_method__label_country">Shipping to UA</span> 
+                            <span class="checkout-step-one__shipping-methods_choose_method__label_price"> $18.99</span>
+                          </label>
+                        </div>
+                    </div>
+                    <div class="checkout-step-one__shipping-methods_choose_method">
+                      <div class="checkout-step-one__shipping-methods_choose_method__title">Registered Mail (9-20 business days) </div>
+                      <div class="checkout-step-one__shipping-methods_choose_method__input">
+                        <label class="checkout-step-one__shipping-methods_choose_method__label">
+                          <input type="radio">
+                          <span class="checkout-step-one__shipping-methods_choose_method__label_country">Shipping to UA</span> 
+                          <span class="checkout-step-one__shipping-methods_choose_method__label_price"> $18.99</span>
+                        </label>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="order-comment-area">
+              <div class="order-comment-area__title">Special Instructions or Comments About Your Order</div>
+              <div class="order-comment-area_field-wrapper">
+                <textarea></textarea>
+              </div>
+              
+            </div>
+            <div class="next-step">
+              <div class="next-step__text">Continue to Step 2 - choose your payment method</div>
+              <a href="#" class="btn btn--primary btn--chekout">Continue 
+                <img src="../img/svg/nex-step.svg" />
+              </a>
+            </div>
+         </form>   
+        </main>
+
+        <div class="left-column" >
+            //= components/category-left.html
+           
+        </div>
+    </div>
+</div>
+    //= components/footer.html
+</body>
+</html>

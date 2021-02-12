@@ -1,0 +1,211 @@
+.checkout-title {
+  font-weight: 600;
+  font-size: 2.4rem;
+  text-align: center;
+}
+.checkout-step-one {
+  &-wrapper {
+    @media screen and ( min-width: 750px) {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 16px;
+      margin-bottom: 20px;
+      
+    }
+    @media screen and ( min-width: 900px) {
+      padding: 0;
+    }
+  }
+  &__shipping-information {
+   padding: 0 16px;
+   margin-bottom: 15px;
+   @media screen and ( min-width: 750px) {
+     padding: 0;
+     flex: 0 1 48%;
+     margin-bottom:0;
+     display: flex;
+     flex-direction: column;
+   }
+    &_row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 30px;
+    }
+
+    &_title {
+      background-color: #666666;
+      border-radius: 3px 3px 0px 0px;
+      color: #fff;
+      font-size: 1.7rem;
+      font-weight: 600;
+      padding: 8px 25px;
+      text-transform: uppercase;
+    }
+
+    &_content {
+      background-color: #f6f6f6;
+      border-radius: 0 0 3px 3px;
+      padding: 30px 20px 20px 20px;
+      @media screen and ( min-width: 750px) {
+        flex: 0 1 100%;
+       }
+    }
+
+    &_adress {
+      &__title {
+      color: #ff7900;
+      font-weight: 600;
+     }
+     &_list {
+       margin-top: 10px;
+
+       li {
+         font-size: 1.6rem;
+         font-weight: 500;
+       }
+       li + li {
+        margin-top: 7px;
+       }
+     }
+       flex:0 1 33.333%;
+    }
+
+    &_description {
+      padding: 17px 10px;
+      border: 1px solid #ff7900;
+      border-radius: 3px;
+      color: #ea6f00;
+      flex:0 1 45%;
+    }
+    
+  }
+  &__shipping-methods {
+    padding: 0 16px;
+    margin-bottom: 15px;
+    @media screen and ( min-width: 750px) {
+      padding: 0;
+      flex: 0 1 48%;
+      margin-bottom: 0;
+    }
+    @media screen and ( min-width: 900px) {
+      display: flex;
+      flex-direction: column;
+    }
+     &_title {
+       background-color: #666666;
+       border-radius: 3px 3px 0px 0px;
+       color: #fff;
+       font-size: 1.7rem;
+       font-weight: 600;
+       padding: 8px 25px;
+       text-transform: uppercase;
+     }
+ 
+     &_content {
+       background-color: #f6f6f6;
+       border-radius: 0 0 3px 3px;
+       padding: 30px 0 20px 0;
+       box-shadow: 0px 0px 60px -44px #000000;
+       @media screen and ( min-width: 900px) {
+         flex: 0 1 100%;
+       }
+
+       &__subtitle {
+         text-align: center;
+         margin-bottom: 30px;
+       }
+     }
+     &_choose_method {
+       padding: 20px 30px;
+       @media screen and ( min-width: 900px) { 
+        padding: 20px 20px;
+       }
+       &__title {
+         margin-bottom: 15px;
+         color: #ea6f00;
+         font-weight: 600;
+       }
+       &__label {
+        display: flex;
+        cursor: pointer;
+        input {
+          cursor: pointer;
+        }
+        &_country {
+          margin-left:10px;
+        }
+        &_price {
+          font-weight: 600;
+          margin-left: 5px;
+        }
+
+       }
+     }
+     &_choose_method + &_choose_method  {
+      border-top: 1px solid #e3e3e3;
+     }
+    
+   }
+}
+.order-comment-area {
+  padding: 0 16px;
+  @media screen and (min-width:900px){
+    padding: 0;
+  }
+  &__title {
+    background-color: #666666;
+    border-radius: 3px 3px 0px 0px;
+    color: #fff;
+    font-size: 1.7rem;
+    font-weight: 600;
+    padding: 8px 25px;
+    text-transform: uppercase;
+  }
+  &_field-wrapper {
+    padding: 20px;
+    background-color: #f6f6f6;
+    border-radius: 3px;
+    textarea {
+      width: 100%;
+      resize: none;
+      padding: 10px 5px;
+      border: 1px solid #e3e3e3;
+      border-radius: 3px;
+      @media screen and (min-width:900px){ 
+        min-height: 80px;
+      }
+
+    }
+  }
+}
+
+.btn--grey {
+  color: #555;
+  background-color: #efefef;
+  border-radius: 1px solid #e3e3e3;
+  border-radius: 2px;
+}
+.next-step {
+  margin: 40px;
+  text-align: center;
+  @media screen and ( min-width: 750px) { 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  @media screen and (min-width:900px){
+    margin: 40px 0;
+  }
+  &__text {
+    margin-bottom: 20px;
+    @media screen and ( min-width: 750px) {  
+      margin-bottom: 0;
+    }
+  }
+}
+.btn--chekout {
+  img {
+    margin-left: 15px;
+    object-fit: none;
+  }
+}
